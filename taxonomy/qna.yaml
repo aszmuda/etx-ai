@@ -1,4 +1,55 @@
 version: 1
 domain: Red Hat Documentation
 created_by: yongzhuang + aron
-document_outline: Getting started with Red Hat OpenShift AI Self-Managed
+document_outline: |
+    Getting started with Red Hat OpenShift AI Self-Managed
+seed_examples:
+    - context: |
+          To implement a data science workflow, you must create a project. In OpenShift, a project is a Kubernetes namespace with additional annotations, and is the main way that you can manage user access to resources. A project organizes your data science work in one place and also allows you to collaborate with other developers and data scientists in your organization.
+          Within a project, you can add the following functionality:
+            - Connections so that you can access data without having to hardcode information like endpoints or credentials.
+            - Workbenches for working with and processing data, and for developing models.
+            - Deployed models so that you can test them and then integrate them into intelligent applications. Deploying a model makes it available as a service that you can access by using an API.
+            - Pipelines for automating your ML workflow.
+          ## Prerequisites
+            - You have logged in to Red Hat OpenShift AI.
+            - If you are using OpenShift AI groups, you are part of the user group or admin group (for example, rhoai-users or rhoai-admins ) in OpenShift.
+            - You have the appropriate roles and permissions to create projects.
+          ## Procedure
+            - 1. From the OpenShift AI dashboard, select Data science projects. The Data science projects page shows a list of projects that you can access. For each userrequested project in the list, the Name column shows the project display name, the user who requested the project, and the project description.
+            - 2. Click Create project.
+            - 3. In the Create project dialog, update the Name field to enter a unique display name for your project.
+            - 4. Optional: If you want to change the default resource name for your project, click Edit resource name.
+            - The resource name is what your resource is labeled in OpenShift. Valid characters include lowercase letters, numbers, and hyphens (-). The resource name cannot exceed 30 characters, and it must start with a letter and end with a letter or number.
+            Note: You cannot change the resource name after the project is created. You can edit only the display name and the description.
+            - 5. Optional: In the Description field, provide a project description.
+            - 6. Click Create.
+
+          questions_and_answers:
+          - questions: |
+             What are the functionalities we can add within a project?
+            answers: |
+              These are the functionalities:
+                1. Connections so that you can access data without having to hardcode information like endpoints or credentials.
+                2. Workbenches for working with and processing data, and for developing models.
+                3. Deployed models so that you can test them and then integrate them into intelligent applications. Deploying a model makes it available as a service that you can access by using an API.
+                4. Pipelines for automating your ML workflow.
+          - questions: |
+             What are the prerequisites for creating a data science project?
+            answers: |
+              These are the prerequisites:
+                1. You have logged in to Red Hat OpenShift AI.
+                2. If you are using OpenShift AI groups, you are part of the user group or admin group (for example, rhoai-users or rhoai-admins ) in OpenShift.
+                3. You have the appropriate roles and permissions to create projects.
+          - questions: |
+             What are the procedures for creating a data science project?
+            answers: |
+              These are the procedures:
+                - 1. From the OpenShift AI dashboard, select Data science projects. The Data science projects page shows a list of projects that you can access. For each userrequested project in the list, the Name column shows the project display name, the user who requested the project, and the project description.
+                - 2. Click Create project.
+                - 3. In the Create project dialog, update the Name field to enter a unique display name for your project.
+                - 4. Optional: If you want to change the default resource name for your project, click Edit resource name.
+                - The resource name is what your resource is labeled in OpenShift. Valid characters include lowercase letters, numbers, and hyphens (-). The resource name cannot exceed 30 characters, and it must start with a letter and end with a letter or number.
+                Note: You cannot change the resource name after the project is created. You can edit only the display name and the description.
+                - 5. Optional: In the Description field, provide a project description.
+                - 6. Click Create.
