@@ -53,3 +53,47 @@ seed_examples:
                 Note: You cannot change the resource name after the project is created. You can edit only the display name and the description.
                 - 5. Optional: In the Description field, provide a project description.
                 - 6. Click Create.
+    - context: |
+              A workbench is an isolated area where you can examine and work with ML models. You can also work with data and run programs, for example to prepare and clean data. While a workbench is not required if, for example, you only want to service an existing model, one is needed for most data science workflow tasks, such as writing code to process data or training a model.      
+              When you create a workbench, you specify an image (an IDE, packages, and other dependencies). Supported IDEs include JupyterLab, code-server, and RStudio (Technology Preview).        
+              The IDEs are based on a server-client architecture. Each IDE provides a server that runs in a container on the OpenShift cluster, while the user interface (the client) is displayed in your web browser. For example, the Jupyter notebook server runs in a container on the Red Hat OpenShift cluster. The client is the JupyterLab interface that opens in your web browser on your local computer. All of the commands that you enter in JupyterLab are executed by the notebook server. Similarly, other IDEs like code-server or RStudio Server provide a server that runs in a container on the OpenShift cluster, while the user interface is displayed in your web browser. This architecture allows you to interact through your local computer in a browser environment, while all processing occurs on the cluster. The cluster provides the benefits of larger available resources and security because the data being processed never leaves the cluster.
+              In a workbench, you can also configure connections (to access external data for training models and to save models so that you can deploy them) and cluster storage (for persisting data). Workbenches within the same project can share models and data through object storage with the data science pipelines and model servers.
+                          
+              questions_and_answers:
+              - questions: |
+                 What is the primary purpose of a workbench in the context of data science workflows?
+                answers: |
+                  The primary purpose of a workbench in data science workflows is to provide an isolated environment where users can write and execute code, prepare and clean data, and train machine learning models. It is essential for most data science tasks that involve development and experimentation, although it is not required if the user only intends to service an existing model.
+              - questions: |
+                 What role does the OpenShift cluster play in the server-client architecture of IDEs used in a workbench?
+                answers: |
+                  In the server-client architecture of IDEs within a workbench, the OpenShift cluster hosts and runs the server component of the IDE in a container. This setup ensures that all computational tasks, such as executing commands and processing data, occur securely within the cluster. The client interface is displayed in the user's web browser, allowing interaction from the local machine without transferring data outside the cluster.
+              - questions: |
+                 Why is a workbench not required if you only want to service an existing model?
+                answers: |
+                  A workbench is not required when servicing an existing model because servicing typically involves tasks like deploying or monitoring the model, which do not demand an interactive development environment or the execution of code for data processing or model training. These simpler tasks can be handled without the computational and development features a workbench provides.
+
+    - context: |
+           ABOUT WORKBENCH IMAGES
+      
+           A workbench image (sometimes referred to as a notebook image) is optimized with the tools and libraries that you need for model development. You can use the provided workbench images or an OpenShift AI administrator can create custom workbench images adapted to your needs.
+           To provide a consistent, stable platform for your model development, many provided workbench images contain the same version of Python. Most workbench images available on OpenShift AI are pre-built and ready for you to use immediately after OpenShift AI is installed or upgraded.
+           For information about Red Hat support of workbench images and packages, see Red Hat OpenShift AI: Supported Configurations.
+           The following table lists the workbench images that are installed with Red Hat OpenShift AI by default.
+           If the preinstalled packages that are provided in these images are not sufficient for your use case, you have the following options:
+           - Install additional libraries after launching a default image. This option is good if you want to add libraries on an ad hoc basis as you develop models. However, it can be challenging to manage the dependencies of installed libraries and your changes are not saved when the workbench restarts.
+           - Create a custom image that includes the additional libraries or packages. For more information, see Creating custom workbench images. configure connections (to access external data for training models and to save models so that you can deploy them) and cluster storage (for persisting data). Workbenches within the same project can share models and data through object storage with the data science pipelines and model servers.
+            
+            questions_and_answers:
+            - questions: |
+               What is the primary purpose of a workbench image in OpenShift AI?
+              answers: |
+                The primary purpose of a workbench in data science workflows is to provide an isolated environment where users can write and execute code, prepare and clean data, and train machine learning models. It is essential for most data science tasks that involve development and experimentation, although it is not required if the user only intends to service an existing model.
+            - questions: |
+               Why might an OpenShift AI administrator choose to create a custom workbench image?
+              answers: |
+                An OpenShift AI administrator might choose to create a custom workbench image to include specific libraries or packages that are not part of the default images, ensuring the image better meets the unique needs of users or projects.
+            - questions: |
+               What is a potential downside of installing additional libraries in a default workbench image after launching it?
+              answers: |
+               A potential downside of installing additional libraries in a default workbench image after launching it is that the dependencies can be difficult to manage, and any changes made are not preserved when the workbench is restarted.
